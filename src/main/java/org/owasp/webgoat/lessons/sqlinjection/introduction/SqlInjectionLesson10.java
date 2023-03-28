@@ -59,6 +59,12 @@ public class SqlInjectionLesson10 extends AssignmentEndpoint {
     return injectableQueryAvailability(action_string);
   }
 
+  @PostMapping("/SqlInjection/attack1101")
+  @ResponseBody
+  public AttackResult completed123(@RequestParam String action_string123) {
+    return injectableQueryAvailability(action_string123);
+  }
+
   protected AttackResult injectableQueryAvailability(String action) {
     StringBuilder output = new StringBuilder();
     String query = "SELECT * FROM access_log WHERE action LIKE '%" + action + "%'";
